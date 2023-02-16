@@ -26,11 +26,16 @@ def number_of_names():
     while True:
         number = int(input(f'Enter number of desired names *must not exceed {name_list_items}*: '))
         if number < 1 :
-            while True:
-                number = int(input('Input in invalid. Enter again number of desired names: '))
-                if number >= 1:
-                    return number
-        return number
+            number = int(input('Input in invalid. Enter again number of desired names: '))
+            print(number)
+            continue
+        if number > name_list_items:
+            number = int(input('Input in invalid. Enter again number of desired names: '))
+            print(number)
+            continue       
+        else:
+            return number
+
 
    
 def random_name_selector():
