@@ -20,9 +20,8 @@ def insert_names():
             return name_list, name_list_items
     
 
-def number_of_names():
+def number_of_names(number,name_list_items):
     '''This function will ask for the number of names to be selected'''
-    global number
     while True:
         number = int(input(f'Enter number of desired names *must not exceed {name_list_items}*: '))
         if number < 1 :
@@ -42,10 +41,10 @@ def random_name_selector():
     '''This function will select random names from the name_list'''
     global selected_name
     for x in range(number):
-        selected_name.append(random.choice(name_list))
-        if selected_name.count(selected_name[x]) > 1:
-            selected_name.remove(selected_name[x])
-            selected_name.append(random.choice(name_list))
+        selected_name.append(random.sample(name_list))
+        # if selected_name.count(selected_name[x]) > 1:
+        #     selected_name.remove(selected_name[x])
+        #     selected_name.append(random.choice(name_list))
     return selected_name
 
 
@@ -53,7 +52,7 @@ def random_name_selector():
 if __name__ == '__main__':
     '''This is will run the program in an order'''
     insert_names()
-    number_of_names()
+    number_of_names(number,name_list_items)
     random_name_selector()
     print(selected_name)
 
