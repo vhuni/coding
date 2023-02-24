@@ -1,5 +1,8 @@
 import csv
 
+class StudentFailedException(Exception):
+    def __init__(self,value):
+        self.value = value
 
 with open('student_grades.csv') as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=',')
@@ -14,9 +17,11 @@ with open('student_grades.csv') as csv_file:
                 print(f'{row[0]}\'s average score is {average}')
                 line_count += 1
                 if average < 70:
-                    raise Exception
-        except Exception:
-            print(f'{row[0]} failed')
+                    raise StudentFailedException (f'Student {row[0]} failed')
+        except ValueError:
+            print('invalid input')
+        except StudentFailedException as error:
+            print(error)
 
 print(f'Processed {line_count} lines.')
 
