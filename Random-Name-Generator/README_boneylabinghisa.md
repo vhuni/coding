@@ -21,4 +21,4 @@ Program to choose a random name from a list
     2.3. otherwise save the desired number of random names 
 3. Program will show user the names randomly selected
     3.1. select random names from the list by 'number' of names
-    3.2. selected names are shown
+    3.2. selected names are shown.
