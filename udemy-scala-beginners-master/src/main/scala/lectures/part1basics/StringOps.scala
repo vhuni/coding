@@ -5,10 +5,15 @@ object StringOps extends App {
   val str: String = "Hello, I am learning Scala"
 
   println(str.charAt(2))
+//  prints the character 'l'
   println(str.substring(7, 11))
+//  prints the characters 'I am'
   println(str.split(" ").toList)
+//  prints a list 'List(Hello,, I, am, learning, Scala)'
   println(str.startsWith("Hello"))
+//  prints boolean result: true
   println(str.replace(" ", "-"))
+//  prints Hello,-I-am-learning-Scala
   println(str.toLowerCase())
   println(str.length)
 
