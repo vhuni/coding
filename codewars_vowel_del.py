@@ -22,3 +22,12 @@ def is_isogram(string):
      return len(string) == len(set(string.lower()))
     
 print(is_isogram("aba"))
+
+def disemvowel(string):
+    vowels = "aeiouAEIOU"
+    return "".join(char for char in string if char not in vowels)
+
+# Test the function
+input_string = "Hello, Codewars!"
+result = disemvowel(input_string)
+print(result)  # Output: "Hll, Cdwr!"

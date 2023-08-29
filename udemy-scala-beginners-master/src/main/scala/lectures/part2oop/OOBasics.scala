@@ -37,7 +37,7 @@ object OOBasics extends App {
   val counter = new Counter
   counter.inc.print
   counter.inc.inc.inc.print
-  counter.inc(10000).print
+  counter.inc(100).print
 }
 
 /*
@@ -87,6 +87,7 @@ class Counter(val count: Int = 0) {
   def dec(n: Int): Counter =
     if (n <= 0) this
     else dec.dec(n-1)
+
 
   def print = println(count)
 }
